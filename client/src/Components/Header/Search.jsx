@@ -19,15 +19,16 @@ font-size:unset;
 const SearchIconWrapper = styled(Box)`
 color:blue;
 padding:5px;
+display:flex;
 `
 
 const Search = () => {
     return (
         <StyledContainer>
             <InputSearchBase placeholder='Search for products, brands and more' />
-            <SearchIconWrapper>
-                <SearchIcon />
-            </SearchIconWrapper>
+                <SearchIconWrapper>
+                     <SearchIcon />
+                </SearchIconWrapper>
 
         </StyledContainer>
 

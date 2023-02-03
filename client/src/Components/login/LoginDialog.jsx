@@ -1,9 +1,9 @@
 
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { Dialog, DialogContent, TextField, Box, Button, Typography, styled } from '@mui/material';
 
-import { authenticateSignup } from '../../Service/api'
+import { authenticateSignup,authenticateLogin } from '../../Service/api'
 import { DataContext } from '../../Context/dataProvider';
 
 const Component = styled(DialogContent)`
@@ -55,14 +55,14 @@ const Wrapper = styled(Box)`
     }
 `;
 
-/*const Error = styled(Typography)`
+const Error = styled(Typography)`
     font-size: 10px;
     color: #ff6161;
     line-height: 0;
     margin-top: 10px;
     font-weight: 600;
 `
-*/
+
 // height: 70vh;
     
 const Image = styled(Box)`
@@ -106,7 +106,7 @@ const accountInitialValues = {
 const LoginDialog = ({ open, setOpen }) => {
     const [ login, setLogin ] = useState(loginInitialValues);
     const [ signup, setSignup ] = useState(signupInitialValues);
-    //const [ error, showError] = useState(false);
+    const [ error, setError] = useState(false);
     const [ account, toggleAccount ] = useState(accountInitialValues.login);
     const {setAccount} =useContext(DataContext);
 
@@ -120,8 +120,15 @@ const LoginDialog = ({ open, setOpen }) => {
         setSignup({ ...signup, [e.target.name]: e.target.value });
     }
 
-    const loginUser =  () => {
-       
+    const loginUser =  async() => {
+       let response=await authenticateLogin(login);
+       if(response.status===200){
+        handleClose();
+        setAccount(response.data.data.firstname);
+       }  
+       else{
+             setError (true);
+       }
     }
 
     const signupUser = async() => {
@@ -141,6 +148,7 @@ const LoginDialog = ({ open, setOpen }) => {
     const handleClose = () => {
         setOpen(false);
         toggleAccount(accountInitialValues.login);
+        setError(false);
     }
 
     return (
@@ -154,8 +162,8 @@ const LoginDialog = ({ open, setOpen }) => {
                     {
                         account.view === 'login' ? 
                         <Wrapper>
-                            <TextField variant="standard" onChange={(e) => onValueChange(e)} name='username' label='Enter Email/Mobile number' />
-                        {  /*  { error && <Error>Please enter valid Email ID/Mobile number</Error> }*/}
+                            <TextField variant="standard" onChange={(e) => onValueChange(e)} name='username' label='Enter Username' />
+                          { error && <Error>Please enter valid Username and Password</Error> }
                             <TextField variant="standard" onChange={(e) => onValueChange(e)} name='password' label='Enter Password' />
                             <Text>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Text>
                             <LoginButton onClick={() => loginUser()} >Login</LoginButton>

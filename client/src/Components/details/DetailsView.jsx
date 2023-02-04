@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { getProductDetails } from "../../redux/actions/productActions";
 import { styled, Box, Typography, Grid } from '@mui/material';
 import ActionItem from "./ActionItem";
+import ProductDetail from './ProductDetail'
 
 
 const Component = styled(Box)`
@@ -73,7 +74,7 @@ const DetailsView=()=>{
                                 <span style={{ color: '#878787' }}><strike>₹{product.price.mrp}</strike></span>&nbsp;&nbsp;&nbsp;
                                 <span style={{ color: '#388E3C' }}>{product.price.discount} off</span>
                             </Typography>
-                           {/* <ProductDetail product={product} /> */}
+                            <ProductDetail product={product} /> 
                         </RightContainer>
                     </Container>
                 }   

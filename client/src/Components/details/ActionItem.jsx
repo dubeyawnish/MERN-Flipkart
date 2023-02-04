@@ -55,7 +55,7 @@ const ActionItem = ({ product }) => {
     return (
         <LeftContainer>
             <Box style={{ padding: '15px 20px',
-    border: '1px solid #f0f0f0',width: '90%'}}>
+    border: '1px solid #f0f0f0',width: '85%'}}>
             <Image src={product.detailUrl} /><br />
             </Box>
             <StyledButton  style={{marginRight: 10, background: '#ff9f00'}} variant="contained"><Cart />Add to Cart</StyledButton>

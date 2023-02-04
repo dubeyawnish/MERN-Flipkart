@@ -17,7 +17,7 @@ export const getProducts = () => async(dispatch) => {
     try {
         const { data } = await axios.get(`${URL}/products`);
         
-     console.log("daata from backend",data);
+        //console.log("daata from backend",data);
        // dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
          dispatch({type:actionTypes.GET_PRODUCTS_SUCCESS,payload:data});
 

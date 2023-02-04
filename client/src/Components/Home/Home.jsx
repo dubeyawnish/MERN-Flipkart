@@ -4,6 +4,9 @@ import { styled, Box } from "@mui/material"
 import { useEffect } from 'react'
 import { getProducts } from '../../redux/actions/productActions'
 import { useDispatch,useSelector } from 'react-redux'
+import Slide from './Slide'
+import MidSlide from './MidSlide'
+import MidSection from './MidSection'
 
 
 
@@ -24,7 +27,7 @@ const Home = () => {
 
         // destructing of data
         const {products}=getproduct;
-        console.log("product in redux store",products);
+        //console.log("product in redux store",products);
 
 
         useEffect(() => {
@@ -41,6 +44,33 @@ const Home = () => {
             <Navbar />
                 <Component>
                     <Banner />
+                    <MidSlide products={products} />
+                <MidSection />
+             <Slide
+                    data={products} 
+                    title='Discounts for You'
+                    timer={false} 
+                    multi={true} 
+                />
+                <Slide
+                    data={products} 
+                    title='Suggested Items'
+                    timer={false} 
+                    multi={true} 
+                />
+                <Slide
+                    data={products} 
+                    title='Top Selection'
+                    timer={false} 
+                    multi={true} 
+                />
+                <Slide
+                    data={products} 
+                    title='Recommended Items'
+                    timer={false} 
+                    multi={true} 
+                />
+                
                 </Component>
 
         </>

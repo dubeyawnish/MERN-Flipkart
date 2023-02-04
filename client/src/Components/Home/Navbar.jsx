@@ -2,14 +2,16 @@
 import {Box,Typography,styled} from '@mui/material'
 import {navData} from '../../Constants/data'
 
-const Component=styled(Box)`
+const Component = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  margin: '55px 130px 0 130px !important',
+  overflowX: 'hidden',
+  [theme.breakpoints.down('lg')]: {
+      margin: '0px !important'
+  }
+}))
 
-display:flex;
-margin:55px 130px 0 130px;
-justify-content:space-between;
-
-
-`
 const Container =styled(Box)`
 padding :12px 8px;
 text-align:center;

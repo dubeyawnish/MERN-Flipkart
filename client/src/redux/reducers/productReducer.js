@@ -6,17 +6,31 @@ import * as actionType from '../constants/productConstants'
 
 
 //in state previous vallue is stord and in action current value is stored
-export const getProductsReducer = (state = { products: [] }, action) => {
-  console.log("this is state," ,action);
+export const getProductsReducer = (state = {products:[]}, action) => {
+    //console.log("reducer state  ====> >", state);
+    //console.log("reducer action ==========>", action);
+   // console.log("updated action payload===========>",action.payload)
+
+
     switch (action.type) {
+
+
         case actionType.GET_PRODUCTS_SUCCESS:
-            return { products: action.paylaod }
+            //console.log("action type successfull")
+            state=action.payload
+            //console.log("updated action payload===========>",action.payload)
+            return {products:action.payload}
 
         case actionType.GET_PRODUCTS_FAIL:
-            return { error: action.paylaod }
+            //console.log("action type failure")
+            return { error: action.payload }
+
 
         default:
             return state
+
+
     }
+
 
 }

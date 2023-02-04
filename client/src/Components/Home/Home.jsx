@@ -19,26 +19,29 @@ background:#F2F2F2;
 // react hooks useeffect  is used as component did mount , component did update and component will unmount;
 const Home = () => {
     const dispatch = useDispatch();
-const {products} = useSelector(state=>state.getProducts);
+    const getproduct = useSelector(state=>state.getProducts);
 
 
-//console.log(products);
-
-    useEffect(() => {
-
-        dispatch(getProducts())
-    }, [dispatch])
+        // destructing of data
+        const {products}=getproduct;
+        console.log("product in redux store",products);
 
 
+        useEffect(() => {
 
+        dispatch(getProducts());
+        
+        }, [dispatch ])
+
+ 
 
 
     return (
         <>
             <Navbar />
-            <Component>
-                <Banner />
-            </Component>
+                <Component>
+                    <Banner />
+                </Component>
 
         </>
     );

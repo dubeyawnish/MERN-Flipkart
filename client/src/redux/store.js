@@ -8,6 +8,7 @@ import { getProductsReducer } from './reducers/productReducer';
 /// it combine more than one reducer
 const reducer = combineReducers({
     getProducts: getProductsReducer
+    
 });
 
 //thunk as a middleware

@@ -23,12 +23,22 @@ const Image = styled('img')({
     
 });
 
-const StyledButton = styled(Button)`
-    width: 46%;
-    border-radius: 2px;
-    height: 50px;
-    color: #FFF;
-`;
+const StyledButton = styled(Button)(({theme })=>({
+    width: '46%',
+    bordeRadius: '2px',
+    height:' 50px',
+    color: '#FFF',
+    [theme.breakpoints.down('lg')]:{
+            width:'46%'
+    },
+    [theme.breakpoints.down('sm')]:{
+        width:'48%'
+    }
+
+
+}))
+    
+
 
 const ActionItem = ({ product }) => {
     const navigate = useNavigate();
@@ -54,7 +64,7 @@ const ActionItem = ({ product }) => {
 
     return (
         <LeftContainer>
-            <Box style={{ padding: '15px 20px',
+            <Box style={{ padding: '15px 10px',
     border: '1px solid #f0f0f0',width: '85%'}}>
             <Image src={product.detailUrl} /><br />
             </Box>

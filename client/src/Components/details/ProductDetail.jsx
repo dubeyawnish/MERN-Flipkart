@@ -16,6 +16,7 @@ const ColumnText = styled(TableRow)`
     & > td {
         font-size: 14px;
         margin-top: 10px;
+        border:none;
     }
 `
 

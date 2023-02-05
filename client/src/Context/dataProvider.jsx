@@ -1,11 +1,11 @@
 import { useState } from "react";
-import {createContext} from "react";
+import { createContext } from "react";
 
-export const DataContext =createContext(null);
+export const DataContext = createContext(null);
 
-const DataProvider =({children})=>{
+const DataProvider = ({ children }) => {
 
-const [account, setAccount] = useState('')
+    const [account, setAccount] = useState('')
 
 
     return (
@@ -15,7 +15,7 @@ const [account, setAccount] = useState('')
 
 
         }}>
-   {children}
+            {children}
         </DataContext.Provider>
     )
 }

@@ -28,8 +28,8 @@ const StyledBadge = styled(Badge)`
 
 const ProductDetail = ({ product }) => {
     const adURL = 'https://rukminim1.flixcart.com/lockin/774/185/images/CCO__PP_2019-07-14.png?q=50';
-    const date = new Date(new Date().getTime()+(5*24*60*60*1000));
-    
+    const date = new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000));
+
     return (
         <>
             <Typography>Available offers</Typography>

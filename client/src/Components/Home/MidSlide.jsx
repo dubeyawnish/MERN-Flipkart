@@ -6,14 +6,14 @@ const Component = styled(Box)`
     display: flex;
 `
 
-const LeftComponent = styled(Box)(({ theme}) => ({
+const LeftComponent = styled(Box)(({ theme }) => ({
     width: '83%',
     [theme.breakpoints.down('md')]: {
         width: '100%'
     }
 }))
 
-const RightComponent = styled(Box)(({ theme}) => ({
+const RightComponent = styled(Box)(({ theme }) => ({
     marginTop: 10,
     background: '#FFFFFF',
     width: '17%',
@@ -31,15 +31,15 @@ const MidSlide = ({ products }) => {
     return (
         <Component>
             <LeftComponent>
-                <Slide 
-                    data={products} 
+                <Slide
+                    data={products}
                     title='Deals of the Day'
-                    timer={true} 
-                    multi={true} 
+                    timer={true}
+                    multi={true}
                 />
             </LeftComponent>
             <RightComponent>
-                <img src={adURL} style={{width: 217}}/>
+                <img src={adURL} style={{ width: 217 }} />
             </RightComponent>
         </Component>
     )

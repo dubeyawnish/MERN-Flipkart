@@ -1,4 +1,4 @@
-import {  Grid, styled } from '@mui/material';
+import { Grid, styled } from '@mui/material';
 
 const ImageURL = [
     'https://rukminim1.flixcart.com/flap/960/960/image/2f30db9425df5cec.jpg?q=50',
@@ -12,7 +12,7 @@ const Wrapper = styled(Grid)`
     justify-content: space-between;
 `;
 
-const Image = styled('img')(({ theme }) => ({ 
+const Image = styled('img')(({ theme }) => ({
     display: 'flex',
     marginTop: 20,
     justifyContent: 'space-between',

@@ -1,9 +1,9 @@
 import { InputBase, List, ListItem, Box, styled } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
-import { useState,useEffect } from 'react';
-import {useSelector,useDispatch} from 'react-redux'
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import { getProducts } from '../../redux/actions/productActions';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const StyledContainer = styled(Box)`
  background:#fff;
@@ -36,50 +36,50 @@ display:flex;
 `
 
 const Search = () => {
-const [text, setText] = useState('');
-const [ open, setOpen ] = useState(true)
+  const [text, setText] = useState('');
+  const [open, setOpen] = useState(true)
 
-const getText=(text) =>{
+  const getText = (text) => {
     setText(text);
     setOpen(false);
-}
-const {products}  =useSelector(state=>state.getProducts);
-const dispatch=useDispatch();
-  useEffect(()=>{
-   dispatch(getProducts())
-  },[dispatch])
+  }
+  const { products } = useSelector(state => state.getProducts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [dispatch])
 
-    return (
-        <StyledContainer>
-            <InputSearchBase placeholder='Search for products, brands and more'
-                             onChange={(e)=>getText(e.target.value)}
-            />
-                <SearchIconWrapper>
-                     <SearchIcon />
-                </SearchIconWrapper>
+  return (
+    <StyledContainer>
+      <InputSearchBase placeholder='Search for products, brands and more'
+        onChange={(e) => getText(e.target.value)}
+      />
+      <SearchIconWrapper>
+        <SearchIcon />
+      </SearchIconWrapper>
 
-                {
-              text && 
-              <ListWrapper hidden={open}>
-                {
-                  products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => (
-                    <ListItem>
-                      <Link 
-                        to={`/product/${product.id}`} 
-                        style={{ textDecoration:'none', color:'inherit'}}
-                        onClick={() => setOpen(true)}  
-                      >
-                        {product.title.longTitle}
-                      </Link>
-                    </ListItem>
-                  ))
-                }  
-              </ListWrapper>
-            }
+      {
+        text &&
+        <ListWrapper hidden={open}>
+          {
+            products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => (
+              <ListItem>
+                <Link
+                  to={`/product/${product.id}`}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                  onClick={() => setOpen(true)}
+                >
+                  {product.title.longTitle}
+                </Link>
+              </ListItem>
+            ))
+          }
+        </ListWrapper>
+      }
 
-        </StyledContainer>
+    </StyledContainer>
 
-    )
+  )
 
 }
 

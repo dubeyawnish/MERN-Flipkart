@@ -67,23 +67,23 @@ const RenderTimer = styled(Box)(({ theme }) => ({
         display: 'none'
     }
 }));
-      
+
 const MultiSlide = ({ data, timer, title }) => {
     const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
 
     const renderer = ({ hours, minutes, seconds }) => {
         return <RenderTimer variant="span">{hours} : {minutes} : {seconds}  Left</RenderTimer>;
     };
-    
+
     return (
         <Component>
             <Deal>
                 <DealText>{title}</DealText>
                 {
                     timer && <Timer>
-                                <img src={timerURL} style={{ width: 24 }} alt='time clock' />
-                                <Countdown date={Date.now() + 5.04e+7} renderer={renderer} />
-                        </Timer>
+                        <img src={timerURL} style={{ width: 24 }} alt='time clock' />
+                        <Countdown date={Date.now() + 5.04e+7} renderer={renderer} />
+                    </Timer>
                 }
                 <ViewAllButton variant="contained" color="primary">View All</ViewAllButton>
             </Deal>
@@ -105,7 +105,7 @@ const MultiSlide = ({ data, timer, title }) => {
             >
                 {
                     data.map(temp => (
-                        <Link to={`product/${temp.id}`} style={{textDecoration: 'none'}}>  
+                        <Link to={`product/${temp.id}`} style={{ textDecoration: 'none' }}>
                             <Box textAlign="center" style={{ padding: '25px 15px' }}>
                                 <Image src={temp.url} />
                                 <Text style={{ fontWeight: 600, color: '#212121' }}>{temp.title.shortTitle}</Text>

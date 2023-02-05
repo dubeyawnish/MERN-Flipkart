@@ -33,8 +33,8 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
     }
 }));
 
-const CustomButtonWrapper = styled('span')(({ theme }) => ({ 
-    margin: '0 5% 0 auto', 
+const CustomButtonWrapper = styled('span')(({ theme }) => ({
+    margin: '0 5% 0 auto',
     [theme.breakpoints.down('md')]: {
         display: 'none'
     }
@@ -71,7 +71,7 @@ const Header = () => {
     return (
         <StyledHeaders>
             <Toolbar style={{ minHeight: 55 }}>
-            <MenuButton
+                <MenuButton
                     color="inherit"
                     onClick={handleOpen}
                 >

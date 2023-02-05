@@ -50,15 +50,15 @@ const TotalView = ({ cartItems }) => {
     useEffect(() => {
         totalAmount();
     }, [cartItems]);
-    
+
     const totalAmount = () => {
         let price = 0, discount = 0;
         {
-        cartItems.map(item => {
-            price += item.price.mrp
-            discount += (item.price.mrp - item.price.cost) 
-        })
-    }
+            cartItems.map(item => {
+                price += item.price.mrp
+                discount += (item.price.mrp - item.price.cost)
+            })
+        }
         setPrice(price);
         setDiscount(discount);
     }

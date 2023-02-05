@@ -11,14 +11,14 @@ const StyledButton = styled(Button)`
 `;
 
 const GroupedButton = () => {
-    const [ counter, setCounter ] = useState(1);
+    const [counter, setCounter] = useState(1);
 
     const handleIncrement = () => {
-        setCounter(counter => counter + 1 );
+        setCounter(counter => counter + 1);
     };
 
     const handleDecrement = () => {
-        setCounter(counter => counter - 1 );
+        setCounter(counter => counter - 1);
     };
 
     return (

@@ -4,6 +4,7 @@ import LoginDialog from '../login/LoginDialog';
 import { useState ,useContext} from 'react';
 import { DataContext } from '../../Context/dataProvider';
 import Profile from './Profile';
+import {Link } from 'react-router-dom'
 
 const Wrapper = styled(Box)(({ theme }) => ({
   margin: '0 3% 0 auto',
@@ -27,8 +28,10 @@ const Wrapper = styled(Box)(({ theme }) => ({
   }
 }));
 
-const Container = styled(Box)(({ theme }) => ({
+const Container = styled(Link)(({ theme }) => ({
   display: 'flex',
+  textDecoration:'none',
+  color:'inherit',
   [theme.breakpoints.down('md')]: {
       display: 'block'
   }
@@ -67,7 +70,7 @@ const openDialog=()=>{
       
       <Typography style={{ marginTop: 3, width: 135 }}>Become a Seller</Typography>
       <Typography style={{ marginTop: 3 }}>More</Typography>
-      <Container>
+      <Container to='/cart'>
               <ShoppingCart />
               <Typography>Cart</Typography>
       </Container>

@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+
 
 import { Box, Typography, Button, Grid, styled } from '@mui/material';
 import { useParams } from 'react-router-dom';
@@ -64,22 +64,7 @@ const Cart = () => {
 
     const dispatch = useDispatch();
 
-    /*  useEffect(() => {
-          if(cartItems && id !== cartItems.id)   
-              dispatch(addToCart(id));
-      }, [dispatch, cartItems, id]);
-  
     
-  
-      const buyNow = async () => {
-          let response = await payUsingPaytm({ amount: 500, email: 'dubeyawnish6@gmail.com'});
-          var information = {
-              action: 'https://securegw-stage.paytm.in/order/process',
-              params: response    
-          }
-          post(information);
-   }
-          */
 
     const removeItemFromCart = (id) => {
         dispatch(removeFromCart(id));

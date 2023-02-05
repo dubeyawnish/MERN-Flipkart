@@ -5,6 +5,7 @@ dotenv.config();
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
+
 const Connection = async () => {
     const URL = `mongodb+srv://${username}:${password}@e-commerce.pjioxvy.mongodb.net/?retryWrites=true&w=majority`
     try {

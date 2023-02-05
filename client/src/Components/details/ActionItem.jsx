@@ -4,8 +4,7 @@ import { Button, Box, styled } from '@mui/material';
 import { ShoppingCart as Cart, FlashOn as Flash } from '@mui/icons-material';
 
 import { useNavigate } from 'react-router-dom';
-//import { payUsingPaytm } from '../../service/api';
-//import { post } from '../../utils/paytm';
+
 
 import { addToCart } from '../../redux/actions/cartAction'
 import { useDispatch } from 'react-redux';
@@ -48,15 +47,7 @@ const ActionItem = ({ product }) => {
     const dispatch = useDispatch();
 
 
-    /*  const buyNow = async () => {
-          let response = await payUsingPaytm({ amount: 500, email: 'dubeyawnish6@gmail.com'});
-          var information = {
-              action: 'https://securegw-stage.paytm.in/order/process',
-              params: response    
-          }
-          post(information);
-      }
-  */
+   
     const addItemToCart = () => {
         dispatch(addToCart(id, quantity));
         navigate('/cart');

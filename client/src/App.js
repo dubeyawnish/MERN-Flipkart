@@ -7,6 +7,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 import  {Box } from '@mui/material'
 import DetailsView from './Components/details/DetailsView';
+import Cart from './Components/cart/Cart';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                         <Routes>
                            <Route path='/' element= {<Home />} />
                            <Route path='/product/:id' element={ <DetailsView />}  />
+                           <Route path='/cart' element={<Cart />} />
                         </Routes>
                       </Box>
                       </BrowserRouter>

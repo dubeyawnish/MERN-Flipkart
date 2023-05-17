@@ -3,7 +3,7 @@ A clone of the popular e-commerce website Flipkart, built using modern web devel
 
 ## Tools & Technologies Used
 - MongoDB
-- Express
+- Express.js
 - Node.js
 - Material UI
 - React
